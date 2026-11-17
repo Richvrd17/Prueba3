@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h1>{{ videojuego.titulo }}</h1>
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>Categoría:</strong> {{ videojuego.categoria.nombre }}</li>
+    <li class="list-group-item"><strong>Precio:</strong> ${{ videojuego.precio }}</li>
+    <li class="list-group-item"><strong>Fecha de lanzamiento:</strong> {{ videojuego.fecha_lanzamiento }}</li>
+    <li class="list-group-item"><strong>Disponible:</strong> {{ videojuego.disponible|yesno:"Sí,No" }}</li>
+</ul>
+<a href="{% url 'lista' %}" class="btn btn-secondary">← Volver</a>
+{% endblock %}
